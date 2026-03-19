@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Array Example with Email Validation</title>
+
+
+</head>
+
+<body>
+
+<h2>Add Data to Array</h2>
+
+<label>Enter Text:</label>
+<input type="text" id="text1">
+
+<button onclick="addData()">Add</button>
+<button onclick="displayData()">Display</button>
+
+<h3>Array Data</h3>
+<ul id="list"></ul>
+
+
+<h2>Email Validation</h2>
+
+<label>Enter Email:</label>
+<input type="text" id="email">
+
+<button onclick="validateEmail()">Validate Email</button>
+
+
+<script>
+
+var arr = [];
+
+function addData()
+{
+    var value = document.getElementById("text1").value;
+
+    if(value == "")
+    {
+        alert("Please enter something");
+        return;
+    }
+
+    arr.push(value);
+
+    alert("Data Added");
+
+    document.getElementById("text1").value = "";
+}
+
+function displayData()
+{
+    var list = document.getElementById("list");
+    list.innerHTML = "";
+
+    for(var i=0; i<arr.length; i++)
+    {
+        var li = document.createElement("li");
+        li.innerHTML = arr[i];
+        list.appendChild(li);
+    }
+}
+
+function validateEmail()
+{
+    var email = document.getElementById("email").value;
+
+    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(pattern.test(email))
+    {
+        alert("Valid Email");
+    }
+    else
+    {
+        alert("Invalid Email");
+    }
+}
+
+</script>
+
+</body>
+</html>

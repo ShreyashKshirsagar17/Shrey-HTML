@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Student Name</title>
+</head>
+
+<body>
+
+<p id="display"> </p>
+
+<label>
+Name
+<input type="text" id="name">
+</label>
+
+<label><input type="radio" onclick="upper()" name="rad">Upper Case</label>
+<label><input type="radio" onclick="lower()" name="rad">Lower Case</label>
+<label><input type="radio" onclick="same()" name="rad">Default</label>
+
+<script >
+
+function upper() {
+	 let data = document.getElementById("name").value; 
+	 
+	 let value = data.toUpperCase();
+	 console.log(value);
+	 
+	 document.getElementById("display").innerHTML = value;
+}
+
+function lower() {
+	let data = document.getElementById("name").value; 
+	let value2 = data.toLowerCase();
+	console.log(value2);
+	
+	document.getElementById("display").innerHTML = value2;
+}
+
+function same()
+{
+	let data = document.getElementById("name").value; 
+	let def = data;
+	console.log(def);
+	
+	document.getElementById("display").innerHTML = def;
+}
+
+
+</script>
+
+</body>
+</html>
